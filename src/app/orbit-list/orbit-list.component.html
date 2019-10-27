@@ -8,9 +8,9 @@
         <th>Launch Date</th>
    </tr>
    <!-- DONE: put <tr *ngFor=""></tr> here -->
-   <tr [class.warning]="satellite.shouldShowWarning()" *ngFor="let satellite of satellites">
+   <tr [class.zebra]="satellites.indexOf(satellite)%2 === 0" *ngFor="let satellite of satellites">
         <td>{{satellite.name}}</td>
-        <td>{{satellite.type}}</td>
+        <td [class.warning]="satellite.shouldShowWarning()">{{satellite.type}}</td>
         <td>{{satellite.operational}}</td>
         <td>{{satellite.orbitType}}</td>
         <td>{{satellite.launchDate}}</td>
